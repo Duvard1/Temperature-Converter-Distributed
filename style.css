@@ -1,0 +1,21 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #95abc4;
+}
+
+input, button {
+    padding: 9px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 1.3em;
+    color: #393b3b;
+}

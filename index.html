@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🌡️ Conversor Temperatura</h1>
+
+  <div>
+    <input type="number" id="celsius" placeholder="Celsius">
+    <button onclick="convertirCtoF()">Convertir a Fahrenheit</button>
+  </div>
+
+  <div>
+    <input type="number" id="fahrenheit" placeholder="Fahrenheit">
+    <button onclick="convertirFtoC()">Convertir a Celsius</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script type="module">
+    import { celsiusToFahrenheit } from './celsius-to-fahrenheit.js';
+    import { fahrenheitToCelsius } from './fahrenheit-to-celsius.js';
+
+    window.convertirCtoF = () => {
+      const c = parseFloat(document.getElementById("celsius").value);
+      const f = celsiusToFahrenheit(c);
+      document.getElementById("resultado").innerText = `${c}°C = ${f}°F`;
+    };
+
+    window.convertirFtoC = () => {
+      const f = parseFloat(document.getElementById("fahrenheit").value);
+      const c = fahrenheitToCelsius(f);
+      document.getElementById("resultado").innerText = `${f}°F = ${c}°C`;
+    };
+  </script>
+</body>
+</html>
